@@ -14,7 +14,7 @@ class Bug
   end
 
   def move(direction)
-    @env.place(',', @x, @y)
+    @env.place('x', @x, @y)
     case direction
     when 'up'
       x = @x - 1
@@ -36,13 +36,13 @@ class Bug
 end
 
 
-enviro = Area.new(10)
+enviro = Area.new(60)
 
-thing = Bug.new(enviro, 'x')
+thing = Bug.new(enviro, 'c')
 
 moves = ['up', 'down', 'left', 'right']
-5.times do
-  thing.move(moves[rand(4)])
+100.times do
+  thing.move('up')
 end
 
 enviro.draw

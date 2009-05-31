@@ -11,7 +11,11 @@ class Area
   end
 
   def place(v, x, y)
-    @area[x][y] = v
+    unless x > size or y > size or x < 0 or y < 0
+      @area[x][y] = v
+    else
+      @area[size][size] = v
+    end
   end
 
   def draw
