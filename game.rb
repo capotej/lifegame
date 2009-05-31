@@ -6,10 +6,11 @@ class Bug
     @name = name
     @env = env
     area = env.area
+    
     x,y = rand(area.size),rand(area.size)
-    env.place(1, x, y)
-    @x = x
-    @y = y
+    
+    env.place(name, x, y)
+    @x, @y = x, y
   end
 
   def move(direction)
@@ -40,13 +41,9 @@ enviro = Area.new(10)
 thing = Bug.new(enviro, 'x')
 
 moves = ['up', 'down', 'left', 'right']
-#5.times do
-#  thing.move(moves[rand(3)])
-#  enviro.draw
-#  puts "---------------"
-#end
+5.times do
+  thing.move(moves[rand(4)])
+end
 
-thing.move('up')
-thing.move('up')
 enviro.draw
 
